@@ -1,7 +1,1 @@
-server:
-  part: 9000
-  servlet:
-    context-path: /api
-spring:
-  profiles:
-    active: dev
+
