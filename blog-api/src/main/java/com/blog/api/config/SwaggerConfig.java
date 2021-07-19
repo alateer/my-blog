@@ -1,6 +1,5 @@
 package com.blog.api.config;
 
-import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -14,14 +13,13 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
 
 @Configuration
-@EnableSwagger2
-@EnableKnife4j
+@EnableSwagger2WebMvc
 @Import(BeanValidatorPluginsConfiguration.class)
 public class SwaggerConfig {
-    @Bean
+    @Bean(value = "defaultApi2")
     public Docket docket(Environment environment) {
         //如果在dev环境的话，就开启swagger
         boolean isDev = environment.acceptsProfiles(Profiles.of("dev"));
