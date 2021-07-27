@@ -1,9 +1,11 @@
-import Vue from "vue"
-import Vuex from "vuex"
+import { createApp } from 'vue'
+import App from '../App.vue'
+import { createStore } from 'vuex'
 
-Vue.use(Vuex);
+const app = createApp(App)
+app.use(store)
 
-const store = new Vuex.Store({
+const store = createStore({
     state: {
         token: window.sessionStorage.getItem("token"),
         userInfo: null
@@ -25,4 +27,6 @@ const store = new Vuex.Store({
     actions: {}
 });
 
-export default store;
+app.mount('#app')
+
+export default store

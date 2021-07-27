@@ -1,62 +1,42 @@
-import VueRouter from "vue-router";
-import Vue from "vue";
+import { createApp } from 'vue'
+import App from '../App.vue'
+import { createRouter, createWebHistory } from "vue-router"
 
-Vue.use(VueRouter);
+const app = createApp(App)
+app.use(router)
 
 const routes = [
     {
         path: "/",
         name: "Home",
-        component: () => import("@/views/Home.vue"),
-        meta: {
-            title: "我的博客"
-        }
+        component: () => import("@/views/Home.vue")
     },
     {
         path: "/category/:name",
         name: "Category",
-        component: () => import("@/views/Category.vue"),
-        meta: {
-            title: "文章分类"
-        }
+        component: () => import("@/views/Category.vue")
     },
     {
         path: "/tag/:name",
         name: "Tag",
-        component: () => import("@/views/Tag.vue"),
-        meta: {
-            title: "标签"
-        } 
+        component: () => import("@/views/Tag.vue")
     },
     {
-        path: "timeline",
+        path: "/timeline",
         name: "TimeLine",
-        component: () => import("@/views/TimeLine.vue"),
-        meta: {
-            title: "时间线"
-        }
+        component: () => import("@/views/TimeLine.vue")
     },
     {
-        path: "message",
+        path: "/message",
         name: "Message",
-        component: () => import("@/views/Message.vue"),
-        meta: {
-            title: "留言板"
-        }
+        component: () => import("@/views/Message.vue")
     }
 ]
 
-const router = new VueRouter({
-    mode: "history",
+const router = createRouter({
+    history: createWebHistory(),
     routes
 })
 
-router.beforeEach((to, from, next) => {
-    console.log(from);
-    if(to.from.title) {
-        document.title = to.document.title;
-    }
-    next();
-})
-
+app.mount('#app')
 export default router;
