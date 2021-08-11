@@ -1,6 +1,13 @@
 <template>
-    <el-footer>
-        footer
+    <el-footer class="me-area">
+        <div class="me-footer">
+            <p>
+                Designed by
+                <strong>
+                    <router-link to="/" class="me-login-font">Tao</router-link>
+                </strong>
+            </p>
+        </div>
     </el-footer>
 </template>
 
@@ -13,10 +20,17 @@ export default {
 <style scoped>
 .el-footer {
     position: absolute;
+    z-index: 1024;
     bottom: 0;
-    width: 100%;
-    height: 50px;
-    background-color: rgb(13, 194, 226);
+    left: 0;
+    min-width: 100%;
+}
+.me-footer {
     text-align: center;
+    line-height: 60px;
+    font-size: 18px;
+}
+.me-login-font {
+    color: #5FB878 !important;
 }
 </style>

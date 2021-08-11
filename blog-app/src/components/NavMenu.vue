@@ -4,8 +4,7 @@
         class="el-menu-demo" 
         router 
         mode="horizontal" 
-        text-color="#fff"
-        active-text-color="#ffd04b"
+        active-text-color="#5FB878"
     >
         <el-menu-item index="/index">主页</el-menu-item>
         <el-menu-item index="/timeline">时间线</el-menu-item>
@@ -25,7 +24,5 @@ export default {
 </script>
 
 <style scoped>
-.el-menu-demo {
-    background-color: #545c64;
-}
+
 </style>

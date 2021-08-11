@@ -1,9 +1,9 @@
 <template>
-    <el-containe>
+    <el-container>
         <base-header></base-header>
-        <router-view class="main"/>
+        <router-view class="me-container"/>
         <base-footer></base-footer>
-    </el-containe>
+    </el-container>
 </template>
 
 <script>
@@ -19,8 +19,7 @@ export default {
 </script>
 
 <style scoped>
-.main {
-    background-color: darkgray;
-    padding-bottom: 50px;
+.me-container {
+    margin: 100px auto 140px;
 }
 </style>
