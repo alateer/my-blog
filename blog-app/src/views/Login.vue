@@ -4,22 +4,47 @@
             <div class="title">
                 My Blog
             </div>
-            <div class="in">
-                <el-input type="text" placeholder="请输入用户名"/>
-            </div>
-            <div class="in">
-                <el-input type="password" placeholder="请输入密码"/>
-            </div>
-            <div class="sure">
-                <el-button>确定</el-button>
-            </div>
+            <el-form ref="userForm" :model="userForm">
+                <el-form-item prop="name" class="in">
+                    <el-input type="text" v-model="userForm.name" placeholder="请输入用户名"/>
+                </el-form-item>
+                <el-form-item prop="password" class="in">
+                    <el-input type="password" v-model="userForm.password" placeholder="请输入密码"/>
+                </el-form-item>
+                <el-form-item size="small" class="sure">
+                    <el-button type="primary" @click="login()">确定</el-button>
+                </el-form-item>
+            </el-form>
         </div>
     </div>
 </template>
 
 <script>
+import { ElMessage } from 'element-plus'
+import routerfrom from '../router'
 export default {
-    name: 'Login'
+    name: 'Login',
+    data() {
+        return {
+            userForm: {
+                name: '',
+                password: ''
+            }
+        }
+    },
+    methods: {
+        login() {
+            this.axios.get("http://localhost:9000/api/user/login/" + this.userForm.name + "/" + this.userForm.password)
+                .then((response) => {
+                    var data = response.data
+                    if(data == 1) {
+                        routerfrom.push('/')
+                    } else {
+                        ElMessage('用户名或密码错误！')
+                    }
+                })
+        }
+    }
 }
 </script>
 

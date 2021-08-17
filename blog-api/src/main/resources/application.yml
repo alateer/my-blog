@@ -12,8 +12,4 @@ spring:
     username: root
     password: guodatabase
 
-logging:
-  level:
-  com.blog.api.dao: trace
-
 
