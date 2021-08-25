@@ -1,7 +1,6 @@
 package com.blog.api.controller;
 
 import com.blog.api.model.entity.User;
-import com.blog.api.model.vo.Results;
 import com.blog.api.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +16,11 @@ public class UserController {
     @GetMapping("/all")
     public List<User> getAllUser() {
         return userService.getAllUser();
+    }
+
+    @PostMapping("/add")
+    public int addUser(@RequestBody User user) {
+        return userService.addUser(user);
     }
 
     @CrossOrigin

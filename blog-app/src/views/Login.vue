@@ -5,14 +5,28 @@
                 My Blog
             </div>
             <el-form ref="userForm" :model="userForm">
-                <el-form-item prop="name" class="in">
-                    <el-input type="text" v-model="userForm.name" placeholder="请输入用户名"/>
+                <el-form-item prop="name">
+                    <el-input 
+                        type="text" 
+                        v-model="userForm.name"
+                        prefix-icon="el-icon-s-custom" 
+                        placeholder="请输入用户名" 
+                        clearable
+                    />
                 </el-form-item>
-                <el-form-item prop="password" class="in">
-                    <el-input type="password" v-model="userForm.password" placeholder="请输入密码"/>
+                <el-form-item prop="password">
+                    <el-input 
+                        type="password" 
+                        v-model="userForm.password"
+                        prefix-icon="el-icon-s-promotion" 
+                        placeholder="请输入密码" 
+                        clearable
+
+                    />
                 </el-form-item>
-                <el-form-item size="small" class="sure">
-                    <el-button type="primary" @click="login()">确定</el-button>
+                <el-form-item class="sure">
+                    <el-button type="primary" @click="login()">登录</el-button>
+                    <el-button type="primary">注册</el-button>
                 </el-form-item>
             </el-form>
         </div>
@@ -53,28 +67,30 @@ export default {
     width: 100%;
     height: 100%;
     position: fixed;
+    background-image: url('../assets/login-background-img.jpg');
+    background-size: cover;
+    background-color: rgb(244, 246, 246);
+    background-repeat: no-repeat;
 }
 .center {
-    background-color: rgb(86, 209, 231);
+    background-color: rgba(244, 246, 246, 0.2);
     position: absolute;
-    left: 35%;
+    left: 52%;
     height: 300px;
     width: 400px;
-    margin: 250px 0;
+    margin: 300px 0;
     padding: 20px;
+    border: 1px rgba(244, 246, 246, 0.2) solid;
+    border-radius: 15px;
 }
 .title {
     margin: 20px 0;
     text-align: center;
+    font-size: 30px;
     height: 50px;
-}
-.in {
-    margin: 25px auto;
-    height: 40px;
+    font-family:serif;
 }
 .sure {
-    margin: 0 auto;
-    height: 40px;
     text-align: center;
 }
 </style>

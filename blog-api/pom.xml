@@ -82,6 +82,7 @@
             <version>8.0.18</version>
         </dependency>
 
+        <!--   hu-tool   -->
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
