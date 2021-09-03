@@ -21,7 +21,6 @@
                         prefix-icon="el-icon-s-promotion" 
                         placeholder="请输入密码" 
                         clearable
-
                     />
                 </el-form-item>
                 <el-form-item class="sure">
