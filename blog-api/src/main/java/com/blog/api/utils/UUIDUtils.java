@@ -2,8 +2,8 @@ package com.blog.api.utils;
 
 import cn.hutool.core.util.IdUtil;
 
-public class uuidUtils {
-    public String getUUID() {
+public class UUIDUtils {
+    public static String getUUID() {
         return IdUtil.simpleUUID();
     }
 }

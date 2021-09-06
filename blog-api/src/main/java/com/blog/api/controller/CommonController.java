@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Api("通用接口")
 @RestController
-public class CommController {
+public class CommonController {
 
     @ApiOperation("检查服务端是否异常")
     @GetMapping("/ping")

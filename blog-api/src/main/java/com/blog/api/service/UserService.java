@@ -2,6 +2,7 @@ package com.blog.api.service;
 
 import com.blog.api.dao.UserMapper;
 import com.blog.api.model.entity.User;
+import com.blog.api.utils.UUIDUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,15 +25,15 @@ public class UserService {
 
     /**
      * 登录验证
-     * @param name
+     * @param userName
      * @param password
      * @return
      */
-    public int isLogin(String name, String password) {
+    public int isLogin(String userName, String password) {
         int flag = 0;
         List<User> userList = userMapper.selectList(null);
         for (User user : userList) {
-            if(user.getName().equals(name) && user.getPassword().equals(password)) {
+            if(user.getUserName().equals(userName) && user.getPassword().equals(password)) {
                 flag = 1;
             }
         }
@@ -57,6 +58,8 @@ public class UserService {
      * @return
      */
     public int addUser(User user) {
+        String id = UUIDUtils.getUUID();
+        user.setId(id);
         return userMapper.insert(user);
     }
 
