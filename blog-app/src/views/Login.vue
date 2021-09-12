@@ -47,7 +47,7 @@ export default {
     },
     methods: {
         login() {
-            this.axios.get("http://localhost:9000/api/user/login/" + this.userForm.name + "/" + this.userForm.password)
+            this.axios.get("http://localhost:8080/api/user/login/" + this.userForm.name + "/" + this.userForm.password)
                 .then((response) => {
                     var data = response.data
                     if(data == 1) {

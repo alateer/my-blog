@@ -57,7 +57,6 @@ public class UserController {
         }
     }
 
-    @CrossOrigin
     @GetMapping("/login/{name}/{pwd}")
     public int getLogin(@PathVariable("name") String name, @PathVariable("pwd") String pwd) {
          return userService.isLogin(name, pwd);

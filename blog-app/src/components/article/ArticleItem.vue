@@ -1,6 +1,7 @@
 <template>
     <el-card class="me-area" :body-style="{ padding: '16px'  }">
-        <div class="me-article-header"></div>
+        <div class="me-article-header">
+        </div>
         <div class="me-article-description"></div>
         <div class="me-article-footer"></div>
     </el-card>
